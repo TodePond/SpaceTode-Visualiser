@@ -109,7 +109,7 @@ const drawDiagram = (diagram) => {
 	for (const spot of diagram) {
 		const element = window[spot.input.symbol]
 		const {colour, emissive, visible} = element
-		const boxMat = new THREE.MeshLambertMaterial({color: colour, emissive, visible, depthFunc: THREE.AlwaysDepth, transparent: true})
+		const boxMat = new THREE.MeshLambertMaterial({color: colour, emissive, visible})
 		const boxMesh = new THREE.Mesh(boxGeo, boxMat)
 		boxMesh.position.x += spot.x
 		boxMesh.position.y += spot.y
@@ -226,16 +226,16 @@ const rabbitDiagram = getFirstDiagram(SpaceTode `
 
 `)
 
-/*
-drawDiagram(sandDiagram)
+
+/*drawDiagram(sandDiagram)
 animateDiagrams({x: 0, y: -1, z: 0})
 */
 /*
 drawDiagram(mouseDiagram)
 animateDiagrams({x: 1, y: 0, z: 0})
 */
-/*
-drawDiagram(carrotDiagram)
+
+/*drawDiagram(carrotDiagram)
 animateDiagrams({x: 0, y: 0, z: 0, r: 1})
 */
 
