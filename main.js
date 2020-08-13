@@ -27,6 +27,31 @@ on.process(orbit.update)
 //==============//
 // Event Window //
 //==============//
+// v4
+/*{
+	const geo = new THREE.BoxGeometry(5.0, 5.0, 1.0)
+	const mat = new THREE.MeshBasicMaterial({color: "white", transparent: true, opacity: 0.6})
+	
+	const xy = new THREE.Mesh(new THREE.BoxGeometry(4.99, 4.99, 1.0), mat)
+	const yz = new THREE.Mesh(geo, mat)
+	const xz = new THREE.Mesh(new THREE.BoxGeometry(4.9, 4.9, 1.0), mat)
+	
+	yz.rotation.x = Math.PI / 2
+	yz.rotation.y = Math.PI / 2
+	xz.rotation.x = Math.PI / 2
+	
+	xy.position.x += 0.01
+	
+	const xyzGeo = new THREE.Geometry
+	xyzGeo.mergeMesh(xy)
+	xyzGeo.mergeMesh(yz)
+	xyzGeo.mergeMesh(xz)
+	const xyz = new THREE.Mesh(xyzGeo, mat)
+	
+	scene.add(xyz)
+	
+}*/
+
 // v3
 /*{
 
@@ -98,7 +123,7 @@ on.process(orbit.update)
 // Diagram Functions //
 //===================//
 
-const BOX_SIZE = 0.75
+const BOX_SIZE = 0.8
 const boxGeo = new THREE.BoxGeometry(BOX_SIZE, BOX_SIZE, BOX_SIZE)
 
 const diagramMeshes = []
@@ -235,11 +260,11 @@ drawDiagram(mouseDiagram)
 animateDiagrams({x: 1, y: 0, z: 0})
 */
 
-/*drawDiagram(carrotDiagram)
+drawDiagram(carrotDiagram)
 animateDiagrams({x: 0, y: 0, z: 0, r: 1})
-*/
 
-drawDiagram(rabbitDiagram)
-animateDiagrams({x: 0, y: 0, z: 1})
+
+/*drawDiagram(rabbitDiagram)
+animateDiagrams({x: 0, y: 0, z: 1})*/
 
 
